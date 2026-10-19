@@ -30,4 +30,12 @@ The status check is named `ci / check`; require that name in branch protection.
 
 Callers pin a major tag (`@v1`), never `@main`, so a change here cannot break every repo at once. Breaking changes get a new major tag (`v2`), and each repo moves deliberately.
 
+Optional input: `golangci-lint-version` (default `v2.15`), e.g.
+
+```yaml
+    uses: stonalampa/.github/.github/workflows/go-ci.yml@v1
+    with:
+      golangci-lint-version: v2.16
+```
+
 The caller's repo must provide the Makefile targets `vet`, `test`, `lint` and `vuln`.
